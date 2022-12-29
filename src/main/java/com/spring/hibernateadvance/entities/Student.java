@@ -13,7 +13,7 @@ import java.util.*;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-@ToString(of = {"id","firstName","lastName","email"})
+@ToString(of = {"id", "firstName", "lastName", "email","status"})
 @EqualsAndHashCode(of = {"id", "email"})
 public class Student {
     @Id
@@ -33,13 +33,17 @@ public class Student {
     @Column(name = "email", length = 45, unique = true)
     private String email;
 
-    // SET
+    /**
+     * SET
+     */
 //    @ElementCollection
 //    @CollectionTable(name = "image", joinColumns = @JoinColumn(name = "student_id"))
 //    @Column(name = "file_name")
 //    private Set<String> images = new HashSet<>();
 
-    // LIST
+    /**
+     * LIST
+     */
 //    @ElementCollection
 //    @CollectionTable(name = "image")
 //    @OrderColumn // default name is <property>_ORDER
@@ -47,27 +51,63 @@ public class Student {
 //    private List<String> images = new ArrayList<>();
 
 
-    // MAP
+    /**
+     * MAP
+     */
 //    @ElementCollection
 //    @CollectionTable(name = "image")
 //    @MapKeyColumn(name = "image_name") // default name is <property>_KEY
 //    @Column(name = "image_description")
 //    private Map<String,String> images = new HashMap<>();
 
-    // SORTED SET
+    /**
+     * SORTED SET
+     */
 //    @ElementCollection
 //    @CollectionTable(name = "image")
 //    @OrderBy("file_name DESC") // default name is <property>_KEY
 //    @Column(name = "file_name")
 //    private Set<String> images = new LinkedHashSet<>();
 
-    // SORTED MAP
-    @ElementCollection
-    @CollectionTable(name = "image")
-    @MapKeyColumn(name = "image_name") // default name is <property>_KEY
-    @OrderBy("image_name DESC") // default name is <property>_KEY
-    @Column(name = "image_description")
-    private Map<String,String> images = new LinkedHashMap<>();
+    /**
+     * SORTED MAP
+     */
+//    @ElementCollection
+//    @CollectionTable(name = "image")
+//    @MapKeyColumn(name = "image_name") // default name is <property>_KEY
+//    @OrderBy("image_name DESC") // default name is <property>_KEY
+//    @Column(name = "image_description")
+//    private Map<String,String> images = new LinkedHashMap<>();
+
+    /**
+     * EMBEDDED CLASS ADDRESS
+     */
+//    @Embedded
+//    private Address address;
 
 
+    /**
+     * EMBEDDED CLASS ADDRESS REUSE
+     */
+
+//    @AttributeOverrides({
+//            @AttributeOverride(name = "street", column = @Column(name = "shipping_street")),
+//            @AttributeOverride(name = "city", column =  @Column(name = "shipping_city")),
+//            @AttributeOverride(name = "zipcode", column =  @Column(name = "shipping_zipcode"))
+//    })
+//    private Address shoppingAddress;
+//
+//    @AttributeOverrides({
+//            @AttributeOverride(name = "street", column = @Column(name = "billing_street")),
+//            @AttributeOverride(name = "city", column =  @Column(name = "billing_city")),
+//            @AttributeOverride(name = "zipcode", column =  @Column(name = "billing_zipcode"))
+//    })
+//    private Address billingAddress;
+
+    /**
+     * ENUM
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private Status status;
 }
