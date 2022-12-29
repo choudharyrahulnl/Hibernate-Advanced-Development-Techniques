@@ -365,13 +365,13 @@ public class HibernateAdvanceApplication implements CommandLineRunner {
 		Learner ormCourse = Learner.builder()
 				.firstName("Rahul")
 				.lastName("Choudhary")
-				.email("no-reply@test.com")
+				.email("no-reply@learner.com")
 				.course("ORM Course")
 				.build();
 		Instructor instructor = Instructor.builder()
 				.firstName("Chad")
 				.lastName("Darby")
-				.email("no-reply@test.com")
+				.email("no-reply@instructor.com")
 				.salary(3000.00).build();
 
 		entityManager.persist(ormCourse);

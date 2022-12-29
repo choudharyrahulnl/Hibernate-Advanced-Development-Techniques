@@ -14,14 +14,18 @@ import lombok.Getter;
 //@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name="USER_TYPE", discriminatorType=DiscriminatorType.STRING)
 // *****  TABLE PER CLASS *****
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+// *****  JOINED TABLE *****
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
     @Id
     // ***** SINGLE TABLE *****
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     // *****  TABLE PER CLASS *****
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    //@GeneratedValue(strategy = GenerationType.TABLE)
+    // *****  JOINED TABLE *****
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
