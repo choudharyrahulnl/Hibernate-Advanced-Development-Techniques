@@ -6,7 +6,8 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Entity
-@DiscriminatorValue(value = "INSTRUCTOR")
+// ***** SINGLE TABLE *****
+//@DiscriminatorValue(value = "INSTRUCTOR")
 @Getter
 public class Instructor extends User {
     private Double salary;
@@ -17,3 +18,6 @@ public class Instructor extends User {
         this.salary = salary;
     }
 }
+
+
+

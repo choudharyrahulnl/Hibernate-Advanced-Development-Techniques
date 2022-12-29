@@ -6,7 +6,8 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Entity
-@DiscriminatorValue(value = "LEARNER")
+// ***** SINGLE TABLE *****
+//@DiscriminatorValue(value = "LEARNER")
 @Getter
 public class Learner extends User {
     private String course;

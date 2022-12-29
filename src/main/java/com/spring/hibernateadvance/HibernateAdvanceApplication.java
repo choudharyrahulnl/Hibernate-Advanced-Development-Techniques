@@ -339,6 +339,29 @@ public class HibernateAdvanceApplication implements CommandLineRunner {
 		 * @GeneratedValue(strategy = GenerationType.TABLE)
 		 */
 
+//		Learner ormCourse = Learner.builder()
+//				.firstName("Rahul")
+//				.lastName("Choudhary")
+//				.email("no-reply@test.com")
+//				.course("ORM Course")
+//				.build();
+//		Instructor instructor = Instructor.builder()
+//				.firstName("Chad")
+//				.lastName("Darby")
+//				.email("no-reply@test.com")
+//				.salary(3000.00).build();
+//
+//		entityManager.persist(ormCourse);
+//		entityManager.persist(instructor);
+
+		/**
+		 * JOINED TABLE
+		 * All classes are mapped to the table
+		 * Super class table contain field common to all subclass
+		 * Subclass table contain only fields specific to the subclass
+		 * Inheritance is modeled with a foreign key
+		 * Hibernate will join data based on primary key & foreign key
+		 */
 		Learner ormCourse = Learner.builder()
 				.firstName("Rahul")
 				.lastName("Choudhary")
@@ -353,5 +376,7 @@ public class HibernateAdvanceApplication implements CommandLineRunner {
 
 		entityManager.persist(ormCourse);
 		entityManager.persist(instructor);
+
+
 	}
 }

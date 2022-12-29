@@ -10,12 +10,17 @@ import lombok.Getter;
 @Table(name = "user")
 @Getter
 @AllArgsConstructor
+// ***** SINGLE TABLE *****
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name="USER_TYPE", discriminatorType=DiscriminatorType.STRING)
+// *****  TABLE PER CLASS *****
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User {
 
     @Id
+    // ***** SINGLE TABLE *****
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    // For TABLE PER CLASS
+    // *****  TABLE PER CLASS *****
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "id", nullable = false)
     private Integer id;
