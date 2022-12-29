@@ -33,3 +33,9 @@
     <li>We can have a database table Student which contains address but in java we can create separate Class for Student & Address</li>
 </ul>
 
+<h3>Inheritance: <h3>
+<ul>
+    <li>Single Table: Best for performance and query</li>
+    <li>Table Per Class OR Mapped Super Class: <Good></Good> for performance and query </li>
+    <li>Joined Table: Normalized database design and data integrity</li>
+</ul>
