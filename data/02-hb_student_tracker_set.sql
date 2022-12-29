@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS `hb_student_tracker_advance`;
 CREATE DATABASE  IF NOT EXISTS `hb_student_tracker_advance`;
 USE `hb_student_tracker_advance`;
 --
@@ -14,13 +15,13 @@ CREATE TABLE `student` (
   `last_name` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `image`;
 
 CREATE TABLE `image` (
   `student_id` int(11) NOT NULL,
   `file_name` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 SET foreign_key_checks = 1;
