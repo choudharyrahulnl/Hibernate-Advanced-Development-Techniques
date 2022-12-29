@@ -362,6 +362,28 @@ public class HibernateAdvanceApplication implements CommandLineRunner {
 		 * Inheritance is modeled with a foreign key
 		 * Hibernate will join data based on primary key & foreign key
 		 */
+//		Learner ormCourse = Learner.builder()
+//				.firstName("Rahul")
+//				.lastName("Choudhary")
+//				.email("no-reply@learner.com")
+//				.course("ORM Course")
+//				.build();
+//		Instructor instructor = Instructor.builder()
+//				.firstName("Chad")
+//				.lastName("Darby")
+//				.email("no-reply@instructor.com")
+//				.salary(3000.00).build();
+//
+//		entityManager.persist(ormCourse);
+//		entityManager.persist(instructor);
+
+		/**
+		 * MAPPED SUPER CLASS
+		 * Subclass is mapped to a table
+		 * Each table has inherited fields and fields from subclass
+		 * Mapped super class is no longer a separate table No @Entity on subclass
+		 * Only subclass will use @Entity
+		 */
 		Learner ormCourse = Learner.builder()
 				.firstName("Rahul")
 				.lastName("Choudhary")

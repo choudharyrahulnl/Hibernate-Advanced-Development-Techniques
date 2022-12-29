@@ -6,8 +6,10 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Entity
-@Table(name = "user")
+// *****  MAPPED SUPER CLASS *****
+//@Entity
+//@Table(name = "user")
+@MappedSuperclass
 @Getter
 @AllArgsConstructor
 // ***** SINGLE TABLE *****
@@ -16,7 +18,7 @@ import lombok.Getter;
 // *****  TABLE PER CLASS *****
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 // *****  JOINED TABLE *****
-@Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
     @Id
